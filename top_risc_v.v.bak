@@ -1,0 +1,39 @@
+module top_risc_v(
+	input areset , clk //asynchronous active low reset and clock
+);
+
+wire [31:0] SrcA, SrcB, ALUResult;
+wire [2:0] ALUControl;
+wire ZeroFlag, SignFlag;
+ALU top_alu(.SrcA(SrcA), .SrcB(SrcB), .ALUControl(ALUControl), .ALUResult(ALUResult), .ZeroFlag(ZeroFlag), .SignFlag(SignFlag));
+
+wire [31:0] ImmExt, PC;
+wire PCSrc, Load;
+program_counter top_program_counter (.clk(clk), .areset(areset), .load(Load), .PCSrc(PCSrc), .PC(PC), .ImmExt(ImmExt));
+
+wire [31:0]Instr;
+instruction_memory top_instruction_memory (.PC(PC), .Instr(Instr));
+
+wire [31:0]  RD2, Result;
+wire RegWrite;
+register_file top_register_file(.clk(clk), .areset(areset), .WE3(RegWrite), .WD3(Result), .RD1(SrcA), .RD2(RD2), .A1(Instr[19:15]), .A2(Instr[24:20]), .A3(Instr[11:7]));
+
+wire ALUSrc;
+MUX top_ALUInputMUX (.In1(RD1), .In2(ImmExt), .Sel(ALUSrc), .out(SrcB));
+
+wire MemWrite;
+wire [31:0] ReadData;
+data_mem top_data_mem(.clk(clk), .WE(MemWrite), .A(ALUResult), .WD(RD2), .RD(ReadData));
+
+wire ResultSrc;
+MUX top_ResultMUX(.In1(ALUResult), .In2(ReadData), .Sel(ResultSrc), .out(Result));
+
+wire [1:0]ImmSrc;
+sign_extend top_sign_extend (.Instr(Instr[31:7]), .ImmSrc(ImmSrc), .ImmExt(ImmExt));
+
+
+control_unit top_control_unit(.ZeroF(ZeroFlag), .Load(Load), .SignF(SignFlag), .op(Instr[6:0]), .funct3(Instr[14:12]), .funct7(Instr[30]), .PCSrc(PCSrc), .ResultSrc(ResultSrc), .MemWrite(MemWrite), .ALUControl(ALUControl), .ALUSrc(ALUSrc), .ImmSrc(ImmSrc), .RegWrite(RegWrite));
+ 
+
+
+endmodule

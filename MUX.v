@@ -1,0 +1,14 @@
+module MUX(
+	input [31:0] In1, In2,
+	input Sel,
+	output reg [31:0] out
+
+);
+
+always @ (*)
+begin
+	out = Sel? In2:In1;
+end
+
+
+endmodule

@@ -1,0 +1,243 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dD:/Studies/Courses/Digital Electronics/IEEE Workshop/5.Session 5/UART_RX
+vALU
+Z0 !s110 1678532217
+!i10b 1
+!s100 d0TBTf:4JReF^@c4]FOVo1
+IeYW1jl2RK3hbUznTmeKjI1
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dD:/Studies/Courses/Digital Electronics/IEEE Workshop/6.Final project/RISC-V
+w1678525888
+8D:/Studies/Courses/Digital Electronics/IEEE Workshop/6.Final project/RISC-V/ALU.v
+FD:/Studies/Courses/Digital Electronics/IEEE Workshop/6.Final project/RISC-V/ALU.v
+L0 4
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1678532217.000000
+!s107 D:/Studies/Courses/Digital Electronics/IEEE Workshop/6.Final project/RISC-V/ALU.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/Studies/Courses/Digital Electronics/IEEE Workshop/6.Final project/RISC-V/ALU.v|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+n@a@l@u
+vcontrol_unit
+Z7 !s110 1678532218
+!i10b 1
+!s100 C_XG<ba;lC6CJoJ>ok02F2
+IMUR]iijI@]`lVZWXT>@1l2
+R1
+R2
+w1678530684
+8D:/Studies/Courses/Digital Electronics/IEEE Workshop/6.Final project/RISC-V/control_unit.v
+FD:/Studies/Courses/Digital Electronics/IEEE Workshop/6.Final project/RISC-V/control_unit.v
+L0 1
+R3
+r1
+!s85 0
+31
+Z8 !s108 1678532218.000000
+!s107 D:/Studies/Courses/Digital Electronics/IEEE Workshop/6.Final project/RISC-V/control_unit.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/Studies/Courses/Digital Electronics/IEEE Workshop/6.Final project/RISC-V/control_unit.v|
+!i113 1
+R5
+R6
+vdata_mem
+R7
+!i10b 1
+!s100 V6fWPe3fiAVSS93Z2>O[Q3
+IUl0cBBLcQ20JRd1g[1kKc0
+R1
+R2
+w1678532214
+8D:/Studies/Courses/Digital Electronics/IEEE Workshop/6.Final project/RISC-V/data_memory.v
+FD:/Studies/Courses/Digital Electronics/IEEE Workshop/6.Final project/RISC-V/data_memory.v
+L0 1
+R3
+r1
+!s85 0
+31
+R8
+!s107 D:/Studies/Courses/Digital Electronics/IEEE Workshop/6.Final project/RISC-V/data_memory.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/Studies/Courses/Digital Electronics/IEEE Workshop/6.Final project/RISC-V/data_memory.v|
+!i113 1
+R5
+R6
+vinst_mem
+!s110 1678486322
+!i10b 1
+!s100 j?R;jFkDXTIil`PC[6INU0
+IXN>zQO23]3Io0iA:PXhoI2
+R1
+R2
+w1678486320
+Z9 8D:/Studies/Courses/Digital Electronics/IEEE Workshop/6.Final project/RISC-V/instruction_memory.v
+Z10 FD:/Studies/Courses/Digital Electronics/IEEE Workshop/6.Final project/RISC-V/instruction_memory.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1678486322.000000
+Z11 !s107 D:/Studies/Courses/Digital Electronics/IEEE Workshop/6.Final project/RISC-V/instruction_memory.v|
+Z12 !s90 -reportprogress|300|-work|work|-stats=none|D:/Studies/Courses/Digital Electronics/IEEE Workshop/6.Final project/RISC-V/instruction_memory.v|
+!i113 1
+R5
+R6
+vinstruction_memory
+R0
+!i10b 1
+!s100 CJ7=InzRV?7a7@YhcfTVX3
+I9VB54U]N_SaYMGDLNO^TX2
+R1
+R2
+w1678532064
+R9
+R10
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+R11
+R12
+!i113 1
+R5
+R6
+vMUX
+R7
+!i10b 1
+!s100 SPz3oJ=1bEnVcNzagWozZ3
+I?TIOmd:k2B];NhfKCoX_U2
+R1
+R2
+w1678501517
+8D:/Studies/Courses/Digital Electronics/IEEE Workshop/6.Final project/RISC-V/MUX.v
+FD:/Studies/Courses/Digital Electronics/IEEE Workshop/6.Final project/RISC-V/MUX.v
+L0 1
+R3
+r1
+!s85 0
+31
+R8
+!s107 D:/Studies/Courses/Digital Electronics/IEEE Workshop/6.Final project/RISC-V/MUX.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/Studies/Courses/Digital Electronics/IEEE Workshop/6.Final project/RISC-V/MUX.v|
+!i113 1
+R5
+R6
+n@m@u@x
+vprogram_counter
+R0
+!i10b 1
+!s100 m8LiT4Z8Noi<2G2Zc?Emn0
+IdlYKUl?U>L<1[]a7a<giS0
+R1
+R2
+w1678528377
+8D:/Studies/Courses/Digital Electronics/IEEE Workshop/6.Final project/RISC-V/Program_Counter.v
+FD:/Studies/Courses/Digital Electronics/IEEE Workshop/6.Final project/RISC-V/Program_Counter.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/Studies/Courses/Digital Electronics/IEEE Workshop/6.Final project/RISC-V/Program_Counter.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/Studies/Courses/Digital Electronics/IEEE Workshop/6.Final project/RISC-V/Program_Counter.v|
+!i113 1
+R5
+R6
+vredister_file
+!s110 1678504329
+!i10b 1
+!s100 GAJEYQo?bG1e7C7[c532^3
+IV9;lBOeZ>6]ag::Hh?Eh<2
+R1
+R2
+w1678504328
+Z13 8D:/Studies/Courses/Digital Electronics/IEEE Workshop/6.Final project/RISC-V/register_file.v
+Z14 FD:/Studies/Courses/Digital Electronics/IEEE Workshop/6.Final project/RISC-V/register_file.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1678504329.000000
+Z15 !s107 D:/Studies/Courses/Digital Electronics/IEEE Workshop/6.Final project/RISC-V/register_file.v|
+Z16 !s90 -reportprogress|300|-work|work|-stats=none|D:/Studies/Courses/Digital Electronics/IEEE Workshop/6.Final project/RISC-V/register_file.v|
+!i113 1
+R5
+R6
+vregister_file
+R7
+!i10b 1
+!s100 Fj]K9DZ_ORK>]Leo]:YF82
+IFKa5n<dkXXDKfZ:nJV`E21
+R1
+R2
+w1678528750
+R13
+R14
+L0 1
+R3
+r1
+!s85 0
+31
+R8
+R15
+R16
+!i113 1
+R5
+R6
+vsign_extend
+R7
+!i10b 1
+!s100 `N6758NRf3fc2dGRPnh>^2
+I>iN@bj8FLIR0neKJg^a0^3
+R1
+R2
+w1678501105
+8D:/Studies/Courses/Digital Electronics/IEEE Workshop/6.Final project/RISC-V/sign_extend.v
+FD:/Studies/Courses/Digital Electronics/IEEE Workshop/6.Final project/RISC-V/sign_extend.v
+L0 1
+R3
+r1
+!s85 0
+31
+R8
+!s107 D:/Studies/Courses/Digital Electronics/IEEE Workshop/6.Final project/RISC-V/sign_extend.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/Studies/Courses/Digital Electronics/IEEE Workshop/6.Final project/RISC-V/sign_extend.v|
+!i113 1
+R5
+R6
+vtop_risc_v
+!s110 1678532219
+!i10b 1
+!s100 _=[KhJFM<JgWlmnkS4gOS1
+I@g5HMRR]123mTGh=gP[^:3
+R1
+R2
+w1678531119
+8D:/Studies/Courses/Digital Electronics/IEEE Workshop/6.Final project/RISC-V/top_risc_v.v
+FD:/Studies/Courses/Digital Electronics/IEEE Workshop/6.Final project/RISC-V/top_risc_v.v
+L0 1
+R3
+r1
+!s85 0
+31
+R8
+!s107 D:/Studies/Courses/Digital Electronics/IEEE Workshop/6.Final project/RISC-V/top_risc_v.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/Studies/Courses/Digital Electronics/IEEE Workshop/6.Final project/RISC-V/top_risc_v.v|
+!i113 1
+R5
+R6

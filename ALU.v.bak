@@ -1,0 +1,53 @@
+// This module represents an Arithmetic Logic Unit (ALU) which performs different operations on two input operands
+// The input operands are two 32-bit registers ScrA and ScrB
+// The output operands are a 32-bit ALUResult and two flags ZeroFlag and SignFlag
+module ALU (
+	input [31:0]ScrA,
+	input [31:0]ScrB,
+	input [2:0]ALUControl,
+	output reg [31:0]ALUResult,
+	output reg ZeroFlag,
+	output reg SignFlag
+);
+
+// The always block executes whenever there is a change in the input signals
+always@(*)
+begin 
+	case (ALUControl)
+	// Add operation
+	3'b000: ALUResult = ScrA + ScrB ; 
+	
+	// Shift left operation
+	3'b001: ALUResult = ScrA << ScrB ;
+	
+	// Subtract operation 
+	3'b010: ALUResult = ScrA - ScrB ;
+
+	// Bitwise XOR operation
+	3'b100: ALUResult = ScrA ^ ScrB ;
+
+	// Shift right operation
+	3'b101: ALUResult = ScrA >> ScrB ;
+ 
+	// Bitwise OR operation
+	3'b110: ALUResult = ScrA | ScrB ;
+
+	// Bitwise AND operation
+	3'b111: ALUResult = ScrA & ScrB ;
+
+	// Default case
+	default: ALUResult = 0;
+        endcase
+
+	// The ZeroFlag indicates whether the ALUResult is zero or not
+	ZeroFlag = ALUResult? 0:1;
+
+	// The SignFlag indicates whether the ALUResult is negative or not
+	SignFlag = ALUResult[31]? 1:0;
+
+end
+endmodule
+
+
+
+

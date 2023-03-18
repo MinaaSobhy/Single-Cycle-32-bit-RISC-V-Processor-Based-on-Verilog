@@ -1,0 +1,34 @@
+module register_file(
+	input WE3,clk,areset,
+	input [4:0] A1,A2,A3,
+	input [31:0] WD3,
+	output reg [31:0] RD1 , RD2
+);
+
+reg[31:0] reg_mem[31:0];
+integer i;
+
+always @ ( posedge clk or negedge areset)
+begin
+
+	if (!areset)
+	begin 
+		for ( i =0 ; i <32 ; i=i+1)
+		reg_mem[i] <= 0;
+	end
+
+	else
+	begin
+		if (WE3)
+		reg_mem[A3]<= WD3;
+	end
+		
+end
+
+always @(*)
+begin
+	RD1 <= reg_mem[A1];
+	RD2 <= reg_mem[A2];
+end
+
+endmodule

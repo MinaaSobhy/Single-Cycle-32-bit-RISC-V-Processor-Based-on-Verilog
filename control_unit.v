@@ -1,0 +1,113 @@
+module control_unit(
+	input ZeroF,SignF,
+	input [6:0]op,
+	input [2:0]funct3,
+	input funct7,
+	output reg PCSrc, ResultSrc, MemWrite, ALUSrc, RegWrite,Load,
+	output reg [1:0] ImmSrc,
+	output reg [2:0] ALUControl
+);
+
+reg [1:0]ALUOP;
+reg Branch;
+
+always @(*)
+begin
+	PCSrc = 0;
+	Load = 1;
+	case(op)
+	//to load word
+	7'b000_0011:begin
+		RegWrite = 1;
+		ImmSrc = 2'b0;
+		ALUSrc = 1;
+		MemWrite = 0;
+		ResultSrc = 1;
+		Branch = 0;
+		ALUOP = 2'b0;
+	end
+	//to store word
+	7'b010_0011:begin
+		RegWrite = 0;
+		ImmSrc = 2'b01;
+		ALUSrc = 1;
+		MemWrite = 1;
+		ResultSrc = 1'bx;
+		Branch = 0;
+		ALUOP = 2'b0;
+	end
+	//R-type
+	7'b011_0011:begin
+		RegWrite = 1;
+		ImmSrc = 2'bxx;
+		ALUSrc = 0;
+		MemWrite = 0;
+		ResultSrc = 0;
+		Branch = 0;
+		ALUOP = 2'b10;
+	end
+	//L-type
+	7'b001_0011:begin
+		RegWrite = 1;
+		ImmSrc = 2'b0;
+		ALUSrc = 1;
+		MemWrite = 0;
+		ResultSrc = 0;
+		Branch = 0;
+		ALUOP = 2'b10;
+	end
+	//branch instructions
+	7'b110_0011:begin
+		RegWrite = 0;
+		ImmSrc = 2'b10;
+		ALUSrc = 0;
+		MemWrite = 0;
+		ResultSrc = 1'bx;
+		Branch = 1;
+		ALUOP = 2'b01;
+	end
+	default:begin
+		RegWrite = 0;
+		ImmSrc = 2'b0;
+		ALUSrc = 0;
+		MemWrite = 0;
+		ResultSrc = 0;
+		Branch = 0;
+		ALUOP = 2'b0;
+	end
+
+
+
+	endcase
+
+	case (ALUOP)
+	2'b00: ALUControl = 3'b000;
+
+	2'b01: begin
+		case (funct3)
+		3'b000: PCSrc = ZeroF & Branch;
+		3'b001: PCSrc = !ZeroF & Branch;
+		3'b100: PCSrc = SignF & Branch;
+		endcase
+		ALUControl = 3'b010;
+	end 
+
+	2'b10: begin
+		case (funct3)
+		3'b000: ALUControl = ({op[5],funct7}==2'b11)?3'b10:3'b0;
+		3'b001: ALUControl = 3'b001;
+		3'b100: ALUControl = 3'b100;
+		3'b101: ALUControl = 3'b101;
+		3'b110: ALUControl = 3'b110;
+		3'b111: ALUControl = 3'b111;
+		default: ALUControl = funct3;
+		endcase
+	end
+
+	default: ALUControl = 3'b000;
+
+
+	endcase
+end
+endmodule
+

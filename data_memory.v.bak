@@ -1,0 +1,29 @@
+module data_mem(
+	input clk, WE,
+	input [31:0] A, 
+	input [31:0]WD,
+	output reg [31:0] RD
+);
+
+reg [31:0] data_mem[299:0]; 
+initial 
+begin
+	for ( i =0 ; i <300 ; i=i+1)
+		data_mem[i] <= 0;
+end
+
+always @ ( posedge clk)
+begin
+	if (WE)
+	begin
+		data_mem[A[31:2]] <= WD;
+	end
+end
+
+
+always @ (*)
+begin
+	RD = data_mem[A];
+end
+
+endmodule
